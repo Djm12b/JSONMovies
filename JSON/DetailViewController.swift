@@ -37,7 +37,20 @@ class DetailViewController: UIViewController {
             }
             
             if let label = episodesLabel {
-                label.text = String(describing:detail.episodesCount)
+                if detail.episodesCount != nil {
+                    if detail.episodesCount == 1 {
+                    label.text = String(detail.episodesCount) + " Episode"
+                    }
+                    else {
+                        label.text = String(detail.episodesCount) + " Episodes"
+                    }
+                }
+                    else
+                    {
+                        label.text = " "
+                    }
+                
+               
             }
             
             if let label = studioNetworkLabel {
